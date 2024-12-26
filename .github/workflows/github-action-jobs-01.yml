@@ -14,4 +14,5 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.head_commit.message, 'skip ci')
     steps:
+      - run: echo ${{ github.event.head_commit.message }}
       - run: echo 'Hello, Skip CI!'
