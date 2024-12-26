@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref_name == 'main'
     steps:
-      - run: echo ${{ github.event }}
+      - run: echo ${{ toJson(github.event) }}
       - run: echo 'Hello, Main!'
   skip_ci:
     runs-on: ubuntu-latest
