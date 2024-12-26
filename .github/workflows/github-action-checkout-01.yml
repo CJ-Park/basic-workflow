@@ -1,7 +1,7 @@
 name: Checkout Workflow
 on: workflow_dispatch
 jobs:
-  checkout:
+  checkout-1:
     runs-on: ubuntu-latest
     steps:
       - run: ls -al
@@ -10,3 +10,15 @@ jobs:
           repository: actions/checkout
           ref: v4
       - run: ls -al
+      - run: cat CHANGELOG.md
+  
+  checkout-2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls -al
+      - uses: actions/checkout@v3
+        with:
+          repository: actions/checkout
+          ref: v4
+      - run: ls -al
+      - run: cat CHANGELOG.md
